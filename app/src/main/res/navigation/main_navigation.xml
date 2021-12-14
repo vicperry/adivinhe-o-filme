@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/menuInicialFragment">
+
+    <fragment
+        android:id="@+id/menuInicialFragment"
+        android:name="com.engdacomp.adivinhe_o_filme.MenuInicial.MenuInicialFragment"
+        android:label="MenuInicialFragment" >
+        <action
+            android:id="@+id/action_menuInicialFragment_to_jogoFragment"
+            app:destination="@id/jogoFragment" />
+        <action
+            android:id="@+id/action_menuInicialFragment_to_regrasFragment"
+            app:destination="@id/regrasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jogoFragment"
+        android:name="com.engdacomp.adivinhe_o_filme.Jogo.JogoFragment"
+        android:label="jogo_fragment"
+        tools:layout="@layout/jogo_fragment" >
+        <action
+            android:id="@+id/action_jogoFragment_to_pontuacaoFragment"
+            app:destination="@id/pontuacaoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pontuacaoFragment"
+        android:name="com.engdacomp.adivinhe_o_filme.Pontuacao.PontuacaoFragment"
+        android:label="pontuacao_fragment"
+        tools:layout="@layout/pontuacao_fragment" >
+        <action
+            android:id="@+id/action_pontuacaoFragment_to_jogoFragment"
+            app:destination="@id/jogoFragment" />
+        <argument
+            android:name="pontuacao"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/regrasFragment"
+        android:name="com.engdacomp.adivinhe_o_filme.Regras.RegrasFragment"
+        android:label="RegrasFragment" />
+</navigation>
